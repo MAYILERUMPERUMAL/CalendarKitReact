@@ -1,6 +1,7 @@
 {
   "name": "@yourname/calendar-kit",
   "version": "1.0.0",
+  "private":"false",
   "description": "React Native Calendar Kit",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
