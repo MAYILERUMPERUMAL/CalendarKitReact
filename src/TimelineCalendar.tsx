@@ -32,6 +32,8 @@ const TimelineCalendar: React.ForwardRefRenderFunction<
     renderHalfLineCustom,
     halfLineContainerStyle,
     onTimeIntervalHeightChange,
+    renderAllDayEvent,
+    renderAllDayEventHeight,
     ...timelineProviderProps
   },
   ref
@@ -61,6 +63,8 @@ const TimelineCalendar: React.ForwardRefRenderFunction<
     renderHalfLineCustom,
     halfLineContainerStyle,
     onTimeIntervalHeightChange,
+    renderAllDayEvent,
+    renderAllDayEventHeight,
   };
 
   return (

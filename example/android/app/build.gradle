@@ -249,8 +249,8 @@ android {
 }
 
 dependencies {
+     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 

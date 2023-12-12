@@ -15,6 +15,8 @@ interface TimelineHeaderProps {
   isLoading?: boolean;
   highlightDates?: HighlightDates;
   selectedEventId?: string;
+  RenderAllEventHeight?: number;
+  renderAllDay?: () => JSX.Element | undefined;
 }
 
 const TimelineHeader = ({
@@ -23,6 +25,8 @@ const TimelineHeader = ({
   isLoading,
   highlightDates,
   selectedEventId,
+  RenderAllEventHeight,
+  renderAllDay,
 }: TimelineHeaderProps) => {
   const {
     syncedLists,
@@ -142,20 +146,28 @@ const TimelineHeader = ({
     }
 
     return (
-      <View style={styles.multipleDayContainer}>
-        <View style={{ width: hourWidth }} />
-        <View style={{ width: rightSideWidth }}>
-          <AnimatedFlashList
-            {...listProps}
-            data={pages[viewMode].data}
-            initialScrollIndex={pages[viewMode].index}
-            estimatedItemSize={rightSideWidth}
-            estimatedListSize={{
-              width: rightSideWidth,
-              height: DEFAULT_PROPS.DAY_BAR_HEIGHT,
-            }}
-            renderItem={_renderMultipleDayItem}
-          />
+      <View>
+        <View
+          style={{
+            ...styles.multipleDayContainer,
+            ...(RenderAllEventHeight && { height: RenderAllEventHeight }),
+          }}
+        >
+          <View style={{ width: hourWidth }} />
+          <View style={{ width: rightSideWidth }}>
+            <AnimatedFlashList
+              {...listProps}
+              data={pages[viewMode].data}
+              initialScrollIndex={pages[viewMode].index}
+              estimatedItemSize={rightSideWidth}
+              estimatedListSize={{
+                width: rightSideWidth,
+                height: DEFAULT_PROPS.DAY_BAR_HEIGHT,
+              }}
+              renderItem={_renderMultipleDayItem}
+            />
+            {RenderAllEventHeight && <>{renderAllDay?.()}</>}
+          </View>
         </View>
       </View>
     );
@@ -205,6 +217,7 @@ const TimelineHeader = ({
       {syncedLists ? _renderDayBarList() : _renderDayBarView()}
       {selectedEventId && <View style={styles.disabledFrame} />}
       {isLoading && <ProgressBar barColor={theme.loadingBarColor} />}
+      {viewMode === 'day' && RenderAllEventHeight && <>{renderAllDay?.()}</>}
     </View>
   );
 };

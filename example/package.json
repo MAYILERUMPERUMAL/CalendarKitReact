@@ -1,6 +1,6 @@
 {
-  "name": "CalendarKitExample",
-  "version": "0.0.1",
+  "name": "@yourname/calendar-kit",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",

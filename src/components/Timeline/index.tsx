@@ -48,6 +48,8 @@ const Timeline: React.ForwardRefRenderFunction<
     highlightDates,
     onChange,
     onTimeIntervalHeightChange,
+    renderAllDayEvent,
+    renderAllDayEventHeight,
     ...other
   },
   ref
@@ -293,6 +295,8 @@ const Timeline: React.ForwardRefRenderFunction<
           isLoading={isLoading}
           highlightDates={highlightDates}
           selectedEventId={selectedEvent?.id}
+          renderAllDay={renderAllDayEvent}
+          RenderAllEventHeight={renderAllDayEventHeight}
         />
       )}
       <View style={styles.content} onLayout={_onContentLayout}>

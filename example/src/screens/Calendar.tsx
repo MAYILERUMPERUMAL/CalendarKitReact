@@ -111,7 +111,7 @@ const Calendar = ({ route, navigation }: CalendarProps) => {
           });
         }}
       >
-        <Text allowFontScaling={false}>Now</Text>
+        <Text allowFontScaling={false}>{'Now'}</Text>
       </TouchableOpacity>
     );
   }, [selectedEvent]);
@@ -211,7 +211,7 @@ const Calendar = ({ route, navigation }: CalendarProps) => {
   };
 
   const _renderHalfLineCustom = useCallback(
-    (width) => (
+    (width: any) => (
       <Svg>
         <Line
           x1="0"
