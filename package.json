@@ -1,7 +1,7 @@
 {
   "name": "yourname-calendar-kit",
   "version": "1.0.0",
-  "private":false,
+  "private": true,
   "description": "React Native Calendar Kit",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -43,12 +43,9 @@
     "calendar-kit",
     "calendar-week-view"
   ],
-  "repository": "https://github.com/howljs/react-native-calendar-kit",
-  "author": "howljs <lehau.dev@gmail.com> (https://github.com/howljs)",
+  "repository": "https://github.com/MAYILERUMPERUMAL/CalendarKitReact",
+  "author": "MAYILERUMPERUMAL <your-email@example.com> (https://github.com/MAYILERUMPERUMAL)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/howljs/react-native-calendar-kit/issues"
-  },
   "homepage": "https://github.com/howljs/react-native-calendar-kit#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -163,7 +160,8 @@
     ]
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "moment-timezone": "^0.5.40",
-    "lodash": "^4.17.21"
+    "yourname-calendar-kit": "^1.0.0"
   }
 }
