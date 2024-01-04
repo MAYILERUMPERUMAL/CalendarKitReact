@@ -8,7 +8,7 @@ export const DEFAULT_PROPS = {
   VIEW_MODE: 'week' as const,
   FIRST_DAY: 1,
   MIN_DATE: moment().subtract(1, 'y').format('YYYY-MM-DD'),
-  MAX_DATE: moment().add(1, 'y').format('YYYY-MM-DD'),
+  MAX_DATE: moment().add(50, 'y').format('YYYY-MM-DD'),
   INITIAL_DATE: moment().format('YYYY-MM-DD'),
   START: 0,
   END: 24,
